@@ -1,0 +1,92 @@
+html {
+    font-family: "Segoe UI Light", sans-serif;
+
+    text-align: center;
+}
+
+h1, h2, h3 {
+    font-weight: 100;
+    font-variant: small-caps;
+}
+
+.bandeau-images {
+    display: inline-block;
+    --outline: 10px red dashed;
+    box-shadow: 0 4px 16px #666;
+    width: 640px;
+    height: 360px;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.bandeau-images > article {
+    width: 640px;
+    height: 360px;
+    --background-color: #069;
+    color: white;
+    text-align: center;
+    padding: 2em;
+}
+
+.bandeau-images > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    --left: -100%;
+
+    opacity: 0;
+
+    animation-name: anim-fade;
+    animation-duration: 30s;
+    animation-iteration-count: infinite;
+
+}
+
+.bandeau-images > :nth-child(1) { animation-delay: 0s; }
+.bandeau-images > :nth-child(2) { animation-delay: 6s; }
+.bandeau-images > :nth-child(3) { animation-delay: 12s; }
+.bandeau-images > :nth-child(4) { animation-delay: 18s; }
+.bandeau-images > :nth-child(5) { animation-delay: 24s; }
+.bandeau-images > article { animation-delay: 6s; }
+
+@keyframes anim-slide {
+    0% {
+        left: 0;
+        z-index: 5;
+    }
+    20% {
+        left: 0;
+        z-index: 10;
+    }
+    30% {
+        left: 100%;
+        z-index: 10;
+    }
+    100% {
+        left: 100%;
+        z-index: 0;
+    }
+
+}
+
+@keyframes anim-fade {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+
+}
+
